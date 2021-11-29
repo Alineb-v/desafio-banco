@@ -1,0 +1,26 @@
+package br.com.algartelecom.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.algartelecom.model.Cliente;
+import br.com.algartelecom.repository.ClienteRepository;
+
+@Service
+public class ClienteService {
+
+	@Autowired
+	ClienteRepository clienteRepository;
+
+	public Cliente detalharxqdl(Long id) {
+		Optional<Cliente> clientes = clienteRepository.findById(id);
+		if (clientes.isPresent()) {
+			return clientes.get();
+		}
+
+		return null;
+
+	}
+}

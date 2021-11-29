@@ -1,0 +1,14 @@
+package br.com.algartelecom.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.com.algartelecom.model.Conta;
+
+public interface ContaRepository extends JpaRepository<Conta, Long>{
+
+	@Query("SELECT u FROM User u WHERE u.status = :status and u.name = :name")
+	User findByTeste(@Param("status") Integer userStatus, 
+	  @Param("name") String userName);
+}
+
+

@@ -1,0 +1,52 @@
+package br.com.algartelecom.controller;
+
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.WebServerException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import br.com.algartelecom.modelo.Cliente;
+import br.com.algartelecom.repository.ClienteRepository;
+
+@RestController
+@RequestMapping("/clientes")
+public class ClienteController {
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	
+	@PostMapping
+	public ResponseEntity<Cliente> cadastrar (@RequestBody Cliente novoCliente, UriComponentsBuilder uriBuilder){
+		
+		try {
+		URI uri = uriBuilder.path("/clientes").buildAndExpand(novoCliente.getId()).toUri();
+		return ResponseEntity.created(uri).body(novoCliente);
+		
+		} catch (WebServerException e) {
+			return ResponseEntity.badRequest().build();
+	}
+
+}
+	
+	@GetMapping
+	public ResponseEntity<List<Cliente>> lista() {
+		List<Cliente> clientes = clienteRepository.findAll();
+		if (clientes!= null) {
+			return ResponseEntity.ok(clientes);
+		}
+		
+		return ResponseEntity.notFound().build();
+	}
+	
+	
+}

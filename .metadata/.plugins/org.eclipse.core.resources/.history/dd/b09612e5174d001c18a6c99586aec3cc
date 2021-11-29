@@ -1,0 +1,8 @@
+package br.com.algartelecom.mode;
+
+public enum StatusConta {
+	
+	ATIVO,
+	INATIVO;
+	
+}

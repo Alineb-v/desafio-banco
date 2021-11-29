@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;br.com.algartelecom.repository.Cont&apos; to &apos;ContaRepository&apos;&#x0A;- Original project: &apos;banco&apos;&#x0A;- Original element: &apos;br.com.algartelecom.repository.Cont&apos;&#x0A;- Renamed element: &apos;br.com.algartelecom.repository.ContaRepository&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Cont&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.algartelecom.repository{Cont.java[Cont" matchStrategy="1" name="ContaRepository" qualified="false" references="true" similarDeclarations="false" stamp="1638120326620" textual="false" version="1.0"/>
+</session>
