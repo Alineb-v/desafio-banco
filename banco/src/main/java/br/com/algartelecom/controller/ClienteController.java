@@ -71,6 +71,8 @@ public class ClienteController {
 	
 	//a camada service aceita o .findById pq tá injetado o repository 
 	//aqui não aceita o .findById porquê não tem na camada service.
+	
+	//USAR DE EXEMPLO - POST
 	@PutMapping("/{id}")
 	public ResponseEntity<Optional<Cliente>> atualizar(@PathVariable Long id, @RequestBody Cliente clienteParaAtualizar) {
 		Optional<Cliente> cliente = clienteService.atualizar(id, clienteParaAtualizar);

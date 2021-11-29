@@ -1,7 +1,0 @@
-package br.com.algartelecom.modelo;
-
-public enum TipoConta {
-
-	CONTA_CORRENTE,
-	CONTA_POUPANCA;
-}

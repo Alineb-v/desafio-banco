@@ -1,8 +1,0 @@
-package br.com.algartelecom.modelo;
-
-public enum StatusConta {
-	
-	ATIVO,
-	INATIVO;
-	
-}

@@ -18,12 +18,13 @@ public class TransacaoService {
 	@Autowired
 	private TransacaoRepository transacaoRepository;
 	
-	public Conta depositar (Transacao transacao, String numConta, Long id) {
+	public Conta depositar (Transacao transacaoDeposito, String numConta) {
 		Conta conta = contaRepository.findByNumConta(numConta);
-		Double novoValor = somar(transacao.getValorTransacao(), conta.getSaldo());
+		Double novoValor = somar(transacaoDeposito.getValorTransacao(), conta.getSaldo());
 		if(conta.getStatus() == StatusConta.ATIVO) {
 			conta.setSaldo(novoValor);
-			transacaoRepository.save(transacao);
+			//Pq salvar transacao no Repository ?
+			transacaoRepository.save(transacaoDeposito);
 			contaRepository.save(conta);
 			return conta;
 		}
