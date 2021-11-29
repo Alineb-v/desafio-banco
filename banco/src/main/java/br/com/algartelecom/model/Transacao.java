@@ -16,7 +16,7 @@ public class Transacao{
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
 	private String numConta;
-	private double valorTransacao;
+	private Double valorTransacao;
 	private LocalDateTime dataDaTransacao = LocalDateTime.now();
 	@Enumerated(EnumType.STRING)
 	private TipoTransacao tipoTransacao;
@@ -32,10 +32,10 @@ public class Transacao{
 	public void setNumConta(String numConta) {
 		this.numConta = numConta;
 	}
-	public double getValorTransacao() {
+	public Double getValorTransacao() {
 		return valorTransacao;
 	}
-	public void setValorTransacao(double valorTransacao) {
+	public void setValorTransacao(Double valorTransacao) {
 		this.valorTransacao = valorTransacao;
 	}
 	public LocalDateTime getDataDaTransacao() {

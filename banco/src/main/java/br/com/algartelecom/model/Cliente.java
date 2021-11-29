@@ -1,5 +1,6 @@
 package br.com.algartelecom.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,9 +16,10 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String email;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.PERSIST)
 	private Endereco endereco;
-	@OneToOne
+	//estudar *** cascadeType
+	@OneToOne(cascade=CascadeType.PERSIST)
 	private Conta conta;
 	
 	

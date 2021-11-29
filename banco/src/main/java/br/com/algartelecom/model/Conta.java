@@ -17,7 +17,8 @@ public class Conta {
 	private String numConta;
 	@Enumerated(EnumType.STRING)
 	private TipoConta tipoConta = TipoConta.CONTA_CORRENTE;
-	private Double saldo;
+	//tratar saldo para não aceitar valor negativo
+	private Double saldo = 0.0;	
 	@Enumerated(EnumType.STRING)
 	private StatusConta status = StatusConta.ATIVO;
 

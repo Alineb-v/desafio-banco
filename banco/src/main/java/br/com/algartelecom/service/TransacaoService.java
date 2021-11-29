@@ -20,6 +20,9 @@ public class TransacaoService {
 	
 	public Conta depositar (Transacao transacaoDeposito, String numConta) {
 		Conta conta = contaRepository.findByNumConta(numConta);
+		if() {
+			//verifica o valor da transacao <0 - return null
+		}
 		Double novoValor = somar(transacaoDeposito.getValorTransacao(), conta.getSaldo());
 		if(conta.getStatus() == StatusConta.ATIVO) {
 			conta.setSaldo(novoValor);
@@ -32,7 +35,7 @@ public class TransacaoService {
 				
 	}
 
-	private Double somar(double valorTransacao, Double saldo) {
+	private Double somar(Double valorTransacao, Double saldo) {
 		return valorTransacao + saldo;
 	}
 
