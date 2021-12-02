@@ -20,6 +20,7 @@ public class Transacao{
 	private LocalDateTime dataDaTransacao = LocalDateTime.now();
 	@Enumerated(EnumType.STRING)
 	private TipoTransacao tipoTransacao;
+	private String numContaDestino;
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +51,14 @@ public class Transacao{
 	public void setTipoTransacao(TipoTransacao tipoTransacao) {
 		this.tipoTransacao = tipoTransacao;
 	}
+	public String getNumContaDestino() {
+		return numContaDestino;
+	}
+	public void setNumContaDestino(String numContaDestino) {
+		this.numContaDestino = numContaDestino;
+	}
+	
+	
 	
 	
 }
