@@ -1,5 +1,7 @@
 package br.com.algartelecom.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,7 @@ public class TransacaoService {
 		if (conta.getStatus() == StatusConta.ATIVO) {
 			conta.setSaldo(novoValor);
 			// Pq salvar transacao no Repository ?
+			transacaoDeposito.setNumConta(numConta);
 			transacaoRepository.save(transacaoDeposito);
 			contaRepository.save(conta);
 			return conta;
@@ -45,6 +48,7 @@ public class TransacaoService {
 		Double novoValor = subtrair(conta.getSaldo(), transacaoSaque.getValorTransacao());
 		if (conta.getStatus() == StatusConta.ATIVO) {
 			conta.setSaldo(novoValor);
+			transacaoSaque.setNumConta(numConta);
 			transacaoRepository.save(transacaoSaque);
 			contaRepository.save(conta);
 			return conta;
@@ -57,22 +61,23 @@ public class TransacaoService {
 	public Conta transferir(Transacao transacaoTransferencia, String numConta) {
 		Conta contaOrigem = contaRepository.findByNumConta(numConta);
 		Conta contaDestino = contaRepository.findByNumConta(transacaoTransferencia.getNumContaDestino());
-		
-		if(contaOrigem == contaDestino || contaOrigem.getStatus() == StatusConta.INATIVO || 
-				contaDestino.getStatus() == StatusConta.INATIVO || contaOrigem.getSaldo() < transacaoTransferencia.getValorTransacao()) {
+
+		if (contaOrigem == contaDestino || contaOrigem.getStatus() == StatusConta.INATIVO
+				|| contaDestino.getStatus() == StatusConta.INATIVO
+				|| contaOrigem.getSaldo() < transacaoTransferencia.getValorTransacao()) {
 			return null;
 		}
-	
+
 		Double valorAtual = subtrair(contaOrigem.getSaldo(), transacaoTransferencia.getValorTransacao());
 		contaOrigem.setSaldo(valorAtual);
 		contaRepository.save(contaOrigem);
 		contaDestino.setSaldo(transacaoTransferencia.getValorTransacao() + contaDestino.getSaldo());
 		contaRepository.save(contaDestino);
-		
+		transacaoTransferencia.setNumConta(numConta);
+		transacaoRepository.save(transacaoTransferencia);
+
 		return contaOrigem;
-		
-		 
-		
+
 	}
 
 	public Conta saldo(String numConta) {
@@ -85,6 +90,11 @@ public class TransacaoService {
 
 	}
 
+	public List<Transacao> extrato(String numConta) {
+		return transacaoRepository.findByNumConta(numConta);
+
+	}
+
 	private Double somar(Double valorTransacao, Double saldo) {
 		return valorTransacao + saldo;
 	}
@@ -92,5 +102,9 @@ public class TransacaoService {
 	private Double subtrair(Double valorTransacao, Double saldo) {
 		return valorTransacao - saldo;
 
+	}
+	
+	public List<Transacao> pegaTodas(){
+		return transacaoRepository.findAll();
 	}
 }

@@ -1,5 +1,0 @@
-package br.com.algartelecom.model;
-
-public enum TipoTransacao {
-
-}

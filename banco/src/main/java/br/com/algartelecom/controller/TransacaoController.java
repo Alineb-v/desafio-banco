@@ -1,5 +1,7 @@
 package br.com.algartelecom.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,19 +43,18 @@ public class TransacaoController {
 		}
 
 	}
-	
+
 	@PostMapping("transferir/{numConta}")
-	public ResponseEntity<Conta> transferir (@PathVariable String numConta, @RequestBody Transacao transacaoTransferencia) {
+	public ResponseEntity<Conta> transferir(@PathVariable String numConta,
+			@RequestBody Transacao transacaoTransferencia) {
 		try {
 			Conta conta = transacaoService.transferir(transacaoTransferencia, numConta);
 			return ResponseEntity.ok(conta);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
 
-	
 	@GetMapping("saldo/{numConta}")
 	public ResponseEntity<Conta> saldo(@PathVariable String numConta) {
 		try {
@@ -65,4 +66,27 @@ public class TransacaoController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+
+	@GetMapping("extrato/{numConta}")
+	public ResponseEntity<List<Transacao>> extrato(@PathVariable String numConta) {
+		try {
+			return ResponseEntity.ok(transacaoService.extrato(numConta));
+
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+
+	}
+
+	@GetMapping("extrato")
+	public ResponseEntity<List<Transacao>> extrato() {
+		try {
+			return ResponseEntity.ok(transacaoService.pegaTodas());
+
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+
+	}
+
 }

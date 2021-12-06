@@ -1,0 +1,7 @@
+INSERT INTO CONTA(nome, numConta, tipoConta, saldo, status) VALUES('Maria', '10045-3', 'CONTA_CORRENTE', 0.0, 'ATIVO')
+
+INSERT INTO CLIENTE(nome, cpf, email, conta) VALUES('Maria', '12345678901', 'cliente1@gmail.com', 1)
+
+
+
+

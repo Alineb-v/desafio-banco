@@ -1,7 +1,0 @@
-package br.com.algartelecom.mode;
-
-public enum TipoConta {
-
-	CONTA_CORRENTE,
-	CONTA_POUPANCA;
-}

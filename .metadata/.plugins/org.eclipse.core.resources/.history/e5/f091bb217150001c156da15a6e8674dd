@@ -1,9 +1,0 @@
-package br.com.algartelecom.repository;
-
-public class TransacaoRepository {
-	
-	public void saldo() {
-		
-	}
-
-}

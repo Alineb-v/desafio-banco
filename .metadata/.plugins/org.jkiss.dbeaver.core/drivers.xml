@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drivers>
+	<provider id="athena"/>
+	<provider id="clickhouse"/>
+	<provider id="datavirtuality"/>
+	<provider id="db2"/>
+	<provider id="db2_zos"/>
+	<provider id="db2_i"/>
+	<provider id="elasticsearch"/>
+	<provider id="exasol"/>
+	<provider id="jaybird"/>
+	<provider id="generic">
+		<driver id="h2_server" category="H2" categories="sql" name="H2 Server" class="org.h2.Driver" url="jdbc:h2:tcp://{host}[:{port}]/{database}" port="8080" description="H2 Server" custom="false" embedded="true" anonymous="true" allowsEmptyPassword="true" instantiable="false">
+			<library type="jar" path="maven:/com.h2database:h2:RELEASE" custom="false" version="1.4.197">
+				<file id="com.h2database:h2" version="1.4.197" path="${drivers_home}/maven/maven-central/com.h2database/h2-1.4.197.jar"/>
+			</library>
+			<parameter name="read-only-data" value="false"/>
+			<parameter name="supports-indexes" value="true"/>
+			<parameter name="all-objects-pattern" value="%"/>
+			<parameter name="quote-reserved-words" value="true"/>
+			<parameter name="omit-schema" value="false"/>
+			<parameter name="supports-table-constraints" value="true"/>
+			<parameter name="schema-filters-enabled" value="false"/>
+			<parameter name="script-delimiter-redefiner" value=";"/>
+			<parameter name="supports-struct-cache" value="true"/>
+			<parameter name="supports-truncate" value="true"/>
+			<parameter name="read-only-meta-data" value="false"/>
+			<parameter name="omit-type-cache" value="false"/>
+			<parameter name="split-procedures-and-functions" value="false"/>
+			<parameter name="supports-stored-code" value="true"/>
+			<parameter name="supports-references" value="true"/>
+			<parameter name="omit-catalog-name" value="false"/>
+			<parameter name="omit-single-catalog" value="false"/>
+			<parameter name="ddl-drop-column-brackets" value="false"/>
+			<parameter name="omit-single-schema" value="false"/>
+			<parameter name="supports-scroll" value="false"/>
+			<parameter name="supports-views" value="true"/>
+			<parameter name="script-delimiter" value=";"/>
+			<parameter name="legacy-sql-dialect" value="false"/>
+			<parameter name="script-delimiter-after-query" value="false"/>
+			<parameter name="use-search-string-escape" value="false"/>
+			<parameter name="supports-multiple-results" value="false"/>
+			<parameter name="script-delimiter-after-block" value="false"/>
+			<parameter name="supports-set-array" value="false"/>
+			<parameter name="alter-table-add-column" value="false"/>
+			<parameter name="ddl-drop-column-short" value="false"/>
+			<parameter name="supports-limits" value="true"/>
+			<parameter name="supports-select-count" value="true"/>
+		</driver>
+		<driver id="h2_embedded" category="H2" categories="sql,embedded" name="H2 Embedded" class="org.h2.Driver" url="jdbc:h2:{file}" description="H2 Embedded" custom="false" embedded="true">
+			<library type="jar" path="maven:/com.h2database:h2:RELEASE" custom="false" version="1.4.197">
+				<file id="com.h2database:h2" version="1.4.197" path="${drivers_home}/maven/maven-central/com.h2database/h2-1.4.197.jar"/>
+			</library>
+			<parameter name="read-only-data" value="false"/>
+			<parameter name="supports-indexes" value="true"/>
+			<parameter name="all-objects-pattern" value="%"/>
+			<parameter name="quote-reserved-words" value="true"/>
+			<parameter name="omit-schema" value="false"/>
+			<parameter name="supports-table-constraints" value="true"/>
+			<parameter name="schema-filters-enabled" value="false"/>
+			<parameter name="script-delimiter-redefiner" value=";"/>
+			<parameter name="supports-struct-cache" value="true"/>
+			<parameter name="supports-truncate" value="true"/>
+			<parameter name="read-only-meta-data" value="false"/>
+			<parameter name="omit-type-cache" value="false"/>
+			<parameter name="split-procedures-and-functions" value="false"/>
+			<parameter name="supports-stored-code" value="true"/>
+			<parameter name="supports-references" value="true"/>
+			<parameter name="omit-catalog-name" value="false"/>
+			<parameter name="omit-single-catalog" value="false"/>
+			<parameter name="ddl-drop-column-brackets" value="false"/>
+			<parameter name="omit-single-schema" value="false"/>
+			<parameter name="supports-scroll" value="false"/>
+			<parameter name="supports-views" value="true"/>
+			<parameter name="script-delimiter" value=";"/>
+			<parameter name="legacy-sql-dialect" value="false"/>
+			<parameter name="script-delimiter-after-query" value="false"/>
+			<parameter name="use-search-string-escape" value="false"/>
+			<parameter name="supports-multiple-results" value="false"/>
+			<parameter name="script-delimiter-after-block" value="false"/>
+			<parameter name="supports-set-array" value="false"/>
+			<parameter name="alter-table-add-column" value="false"/>
+			<parameter name="ddl-drop-column-short" value="false"/>
+			<parameter name="supports-limits" value="true"/>
+			<parameter name="supports-select-count" value="true"/>
+		</driver>
+	</provider>
+	<provider id="bigquery"/>
+	<provider id="google_spanner"/>
+	<provider id="greenplum"/>
+	<provider id="h2gis"/>
+	<provider id="hana"/>
+	<provider id="hive"/>
+	<provider id="kognitio"/>
+	<provider id="sqlserver"/>
+	<provider id="mssql"/>
+	<provider id="mysql"/>
+	<provider id="oceanbase"/>
+	<provider id="ocient"/>
+	<provider id="open-distro-elasticsearch"/>
+	<provider id="oracle"/>
+	<provider id="postgresql">
+		<driver id="postgres-jdbc" categories="sql" name="PostgreSQL" class="org.postgresql.Driver" url="jdbc:postgresql://{host}[:{port}]/[{database}]" port="5432" defaultDatabase="postgres" defaultUser="postgres" description="PostgreSQL driver padrão" custom="false">
+			<library type="jar" path="maven:/org.postgresql:postgresql:RELEASE" custom="false" version="42.2.20">
+				<file id="org.postgresql:postgresql" version="42.2.20" path="${drivers_home}/maven/maven-central/org.postgresql/postgresql-42.2.20.jar"/>
+				<file id="org.checkerframework:checker-qual" version="3.5.0" path="${drivers_home}/maven/maven-central/org.checkerframework/checker-qual-3.5.0.jar"/>
+			</library>
+			<library type="jar" path="maven:/net.postgis:postgis-jdbc:RELEASE" custom="false" version="2.5.0">
+				<file id="net.postgis:postgis-jdbc" version="2.5.0" path="${drivers_home}/maven/maven-central/net.postgis/postgis-jdbc-2.5.0.jar"/>
+			</library>
+			<library type="jar" path="maven:/net.postgis:postgis-geometry:RELEASE" custom="false" version="2.5.0">
+				<file id="net.postgis:postgis-geometry" version="2.5.0" path="${drivers_home}/maven/maven-central/net.postgis/postgis-geometry-2.5.0.jar"/>
+			</library>
+		</driver>
+	</provider>
+	<provider id="snowflake"/>
+	<provider id="sqlite"/>
+	<provider id="vertica"/>
+</drivers>

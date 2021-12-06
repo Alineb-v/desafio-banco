@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maven>
+	<repository id="maven-central" order="0" enabled="true"/>
+	<repository id="exasol-maven-repo" order="1" enabled="true"/>
+	<repository id="monetdb-maven-repo" order="2" enabled="true"/>
+	<repository id="aws-redshift-maven-repo" order="3" enabled="true"/>
+	<repository id="cratedb-maven-repo" order="4" enabled="true"/>
+</maven>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DataSourceDescriptor">
+		<column name="Nome" visible="true" order="0" width="119"/>
+		<column name="Descrição" visible="true" order="1" width="84"/>
+		<column name="Origin" visible="true" order="2" width="60"/>
+		<column name="Tipo de driver" visible="true" order="3" width="614"/>
+	</item>
+	<item id="NodeList/GenericPackage">
+		<column name="Nome" visible="true" order="0" width="100"/>
+		<column name="Catalogo" visible="true" order="1" width="100"/>
+		<column name="Esquema" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/GenericTable">
+		<column name="Nome da tabela" visible="true" order="0" width="128"/>
+		<column name="Tipo de tabela" visible="true" order="1" width="118"/>
+		<column name="Descrição da tabela" visible="true" order="2" width="404"/>
+	</item>
+	<item id="NodeList/GenericTableColumn">
+		<column name="Nome da coluna" visible="true" order="0" width="130"/>
+		<column name="#" visible="true" order="1" width="100"/>
+		<column name="Tipo de dados" visible="true" order="2" width="115"/>
+		<column name="Comprimento" visible="true" order="3" width="112"/>
+		<column name="Escala" visible="true" order="4" width="100"/>
+		<column name="Não nulo" visible="true" order="5" width="100"/>
+		<column name="Auto gerado" visible="true" order="6" width="105"/>
+		<column name="Auto Incrementar" visible="true" order="7" width="142"/>
+		<column name="Padrão" visible="true" order="8" width="100"/>
+		<column name="Descrição" visible="true" order="9" width="100"/>
+	</item>
+	<item id="NodeList/GenericTableForeignKey">
+		<column name="Nome" visible="true" order="0" width="100"/>
+		<column name="Propietário" visible="true" order="1" width="100"/>
+		<column name="Tabela Ref" visible="true" order="2" width="100"/>
+		<column name="Tipo" visible="true" order="3" width="100"/>
+		<column name="Ref Objeto" visible="true" order="4" width="100"/>
+		<column name="Adiamento" visible="true" order="7" width="100"/>
+	</item>
+	<item id="NodeList/GenericTableIndex">
+		<column name="Tabela" visible="true" order="1" width="100"/>
+		<column name="Unico" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/GenericUniqueKey">
+		<column name="Nome" visible="true" order="0" width="100"/>
+		<column name="Propietário" visible="true" order="1" width="100"/>
+		<column name="Tipo" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/GenericView">
+		<column name="Nome da tabela" visible="true" order="0" width="128"/>
+		<column name="Tipo de tabela" visible="true" order="1" width="118"/>
+		<column name="Descrição da tabela" visible="true" order="2" width="154"/>
+	</item>
+	<item id="projectExplorer">
+		<column name="DataSource" visible="true" order="1" width="162"/>
+	</item>
+</items>
