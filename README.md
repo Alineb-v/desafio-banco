@@ -15,14 +15,22 @@
 Você pode ter acesso ao projeto acessando o [link](https://github.com/Alineb-v/desafio-banco) ou [baixá-lo](https://github.com/Alineb-v/desafio-banco/archive/refs/heads/main.zip)
 
 ## 🛠️ Abrir e rodar o projeto
-Após baixar o projeto, você pode abrir com o Eclipse. Para isso, na tela de launcher clique em:
+Após baixar o projeto, você pode abrir com o Eclipse
 
     Extrair o arquivo zip baixado
     Clique no menu file > import > maven > Existing maven Project (pois é um projeto maven)
     Procure o local onde o projeto está e o selecione
     Por fim clique em finish
 
-O Eclipse deve baixar algumas dependências do MAven para configurar o projeto, aguarde até finalizar. Ao finalizar, você pode rodar o projeto.
+O Eclipse deve baixar algumas dependências do Maven para configurar o projeto, aguarde até finalizar. Ao finalizar, você pode rodar o projeto.
+
+## 📁 Acesso aos testes no postman
+Você pode ter acesso ao projeto acessando o [link](https://drive.google.com/file/d/1pJvDEimyjN_H-TOw1SW2khxtcwOPXXlj/view?usp=sharing)
+
+## 🛠️ Abrir e rodar os testes
+Após baixar o projeto, você pode abrir com o Postman
+    
+    Clique no arquivo > abrir com > Postman
 
 ## :heavy_check_mark: Tecnologias utilizadas
   - `Java 11`
@@ -30,6 +38,8 @@ O Eclipse deve baixar algumas dependências do MAven para configurar o projeto, 
   - `Maven 3.6`
   - `Spring Boot`
   - `JUnit Test 5`
+  - `Mockito`
+  - `Postman`
   - `DBeaver`
   - `Postgres`
   - `Docker`
