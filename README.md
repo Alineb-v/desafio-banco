@@ -42,4 +42,3 @@ Após baixar o projeto, você pode abrir com o Postman
   - `Postman`
   - `DBeaver`
   - `Postgres`
-  - `Docker`
