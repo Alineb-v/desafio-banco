@@ -22,7 +22,7 @@ Após baixar o projeto, você pode abrir com o Eclipse
     Procure o local onde o projeto está e o selecione
     Por fim clique em finish
 
-O Eclipse deve baixar algumas dependências do Maven para configurar o projeto, aguarde até finalizar. Ao finalizar, você pode rodar o projeto.
+O Eclipse deve baixar algumas dependências do Maven para configurar o projeto, aguarde até finalizar. Ao finalizar, você pode rodar o projeto
 
 ## 📁 Acesso aos testes no postman
 Você pode ter acesso ao projeto acessando o [link](https://drive.google.com/file/d/1pJvDEimyjN_H-TOw1SW2khxtcwOPXXlj/view?usp=sharing)
