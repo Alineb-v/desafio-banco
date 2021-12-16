@@ -26,5 +26,5 @@ jobs:
       run: mvn -B verify -P coverage --no-transfer-progress
     - uses: codecov/codecov-action@v1
       with:
-          file: ./banco/**/target/site/jacoco/jacoco.xml
+          file: ./banco/target/site/jacoco/jacoco.xml
           name: codecov
