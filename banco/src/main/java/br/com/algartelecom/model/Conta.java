@@ -24,6 +24,21 @@ public class Conta {
 	@Enumerated(EnumType.STRING)
 	private StatusConta status = StatusConta.ATIVO;
 
+
+
+	public Conta() {
+		super();
+	}
+
+	public Conta(Long id, String nome, String numConta, TipoConta tipoConta, Double saldo, StatusConta status) {
+		this.id = id;
+		this.nome = nome;
+		this.numConta = numConta;
+		this.tipoConta = tipoConta;
+		this.saldo = saldo;
+		this.status = status;
+	}
+
 	public Long getId() {
 		return id;
 	}

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
+		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_WIDTH" value="525"/>
@@ -8,23 +13,25 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
-			<item value="org.jkiss.dbeaver.core.perspective"/>
 			<item value="org.eclipse.epp.mpc.ui.command.showMarketplaceWizard"/>
+			<item value="org.jkiss.dbeaver.core.perspective"/>
 			<item value="about"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.perspectives"/>
 			<item value="org.eclipse.ui.commands"/>
+			<item value="org.eclipse.ui.perspectives"/>
 			<item value="org.eclipse.ui.actions"/>
 		</list>
 		<list key="textEntries">
-			<item value="1"/>
+			<item value="3"/>
 			<item value="1"/>
 			<item value="1"/>
 		</list>
 		<list key="textArray">
-			<item value="dbeaver"/>
 			<item value="market"/>
+			<item value="mark"/>
+			<item value="ma"/>
+			<item value="dbeaver"/>
 			<item value="eclipse"/>
 		</list>
 	</section>
@@ -34,5 +41,7 @@
 		<item key="DIALOG_WIDTH" value="802"/>
 		<item key="DIALOG_HEIGHT" value="733"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="ImportExportAction">
 	</section>
 </section>

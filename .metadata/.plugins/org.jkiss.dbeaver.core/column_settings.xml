@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+	<item id="NodeList/DBNDatabaseFolder">
+		<column name="Nome" visible="true" order="0" width="693"/>
+	</item>
+	<item id="NodeList/DBNProjectDatabases/DBNBookmarkFolder/DBNDiagramFolder/DBNResource">
+		<column name="Nome" visible="true" order="0" width="108"/>
+		<column name="Caminho" visible="true" order="1" width="137"/>
+		<column name="Tamanho" visible="true" order="2" width="80"/>
+		<column name="Ultima modificação" visible="true" order="3" width="629"/>
+	</item>
 	<item id="NodeList/DataSourceDescriptor">
 		<column name="Nome" visible="true" order="0" width="119"/>
 		<column name="Descrição" visible="true" order="1" width="84"/>
@@ -50,7 +59,33 @@
 		<column name="Tipo de tabela" visible="true" order="1" width="118"/>
 		<column name="Descrição da tabela" visible="true" order="2" width="154"/>
 	</item>
+	<item id="NodeList/PostgreExtension">
+		<column name="Nome" visible="true" order="0" width="74"/>
+		<column name="Versão " visible="true" order="1" width="69"/>
+		<column name="Relocável" visible="true" order="2" width="85"/>
+		<column name="Esquema " visible="true" order="3" width="84"/>
+		<column name="Tabelas" visible="true" order="4" width="70"/>
+		<column name="Condições" visible="true" order="5" width="311"/>
+	</item>
+	<item id="NodeList/PostgreInformation/DBNDatabaseFolder">
+		<column name="Nome" visible="true" order="0" width="693"/>
+	</item>
+	<item id="NodeList/PostgreSchema">
+		<column name="Nome" visible="true" order="0" width="67"/>
+		<column name="Comentario" visible="true" order="1" width="679"/>
+	</item>
+	<item id="NodeList/PostgreTableRegular">
+		<column name="Nome da tabela" visible="true" order="0" width="128"/>
+		<column name="ID do objeto" visible="true" order="1" width="104"/>
+		<column name="Propietário" visible="true" order="2" width="95"/>
+		<column name="Espaço da tabelas" visible="true" order="3" width="142"/>
+		<column name="Estimativa de contagem de linhas" visible="true" order="4" width="255"/>
+		<column name="Partições" visible="true" order="5" width="82"/>
+		<column name="Partição por" visible="true" order="6" width="102"/>
+		<column name="Opções extras" visible="true" order="7" width="118"/>
+		<column name="Comentário" visible="true" order="8" width="98"/>
+	</item>
 	<item id="projectExplorer">
-		<column name="DataSource" visible="true" order="1" width="162"/>
+		<column name="DataSource" visible="true" order="1" width="158"/>
 	</item>
 </items>

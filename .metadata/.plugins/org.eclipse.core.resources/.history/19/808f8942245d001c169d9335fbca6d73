@@ -1,0 +1,60 @@
+package br.com.algartelecom;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
+import br.com.algartelecom.controller.TransacaoController;
+import br.com.algartelecom.model.Conta;
+import br.com.algartelecom.model.StatusConta;
+import br.com.algartelecom.model.TipoConta;
+import br.com.algartelecom.service.TransacaoService;
+
+@WebMvcTest(TransacaoController.class)
+class BancoApplicationTests {
+
+	@Autowired
+	MockMvc mockMvc;
+
+	@MockBean
+	private TransacaoService service;
+
+	public String recuperarCliente() throws JsonProcessingException    {
+		Conta conta = new Conta(1L, "TESTE", "10045-3", TipoConta.CONTA_CORRENTE, 103.0, StatusConta.ATIVO);
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		return ow.writeValueAsString(conta);
+
+	}
+	@Test
+	void deveriaDepositarValor() throws Exception {
+		URI uri = new URI("/depositar/10045-3");
+   
+        mockMvc
+        .perform(MockMvcRequestBuilders
+                .post(uri)
+                .content(recuperarCliente())
+                .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(MockMvcResultMatchers
+                .status()
+                .is(200));
+	}
+	
+	
+	
+	
+	
+	
+	
+}

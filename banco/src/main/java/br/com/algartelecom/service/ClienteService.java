@@ -11,9 +11,13 @@ import br.com.algartelecom.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
+	
+	ClienteRepository clienteRepository;
 
 	@Autowired
-	ClienteRepository clienteRepository;
+	public ClienteService(ClienteRepository clienteRepository) {
+		this.clienteRepository = clienteRepository;
+	}
 
 	// Save mesmo ?
 	public Cliente cadastrar(Cliente novoCliente) {

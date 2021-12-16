@@ -1,0 +1,30 @@
+package br.com.algartelecom;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+import br.com.algartelecom.controller.TransacaoController;
+import br.com.algartelecom.model.Conta;
+import br.com.algartelecom.model.StatusConta;
+import br.com.algartelecom.model.TipoConta;
+import br.com.algartelecom.service.TransacaoService;
+
+@WebMvcTest(TransacaoController.class)
+class BancoApplicationTests {
+
+	@Autowired
+	MockMvc mockkMvc;
+
+	@MockBean
+	private TransacaoService service;
+
+	@Test
+	public Conta recuperarCliente() {
+		Conta conta = new Conta(1L, "TESTE", "10045-3", TipoConta.CONTA_CORRENTE, 103.0, StatusConta.ATIVO);
+		return conta;
+
+	}
+}

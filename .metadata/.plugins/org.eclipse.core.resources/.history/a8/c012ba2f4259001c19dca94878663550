@@ -1,0 +1,20 @@
+package br.com.algartelecom.service;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.algartelecom.repository.ClienteRepository;
+
+class ClienteServiceTest {
+	
+	private ClienteService service;
+	
+	@Autowired
+	ClienteRepository clienteRepository;
+
+	@Test
+	void test() {
+	
+	}
+
+}

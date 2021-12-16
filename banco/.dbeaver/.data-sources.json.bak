@@ -1,20 +1,15 @@
 {
 	"folders": {},
 	"connections": {
-		"h2_server-17d8c0f3714-db2a027fb6342f8": {
+		"h2_embedded-17d8c32ab90-11db471f32a86438": {
 			"provider": "generic",
-			"driver": "h2_server",
-			"name": "desafio-dados",
+			"driver": "h2_embedded",
+			"name": "desafio-banco",
 			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
 			"read-only": false,
 			"configuration": {
-				"host": "localhost",
-				"port": "8080",
-				"database": "desafio-dados",
-				"url": "jdbc:h2:tcp://localhost:8080/desafio-dados",
+				"database": "mem:desafio-banco",
+				"url": "jdbc:h2:mem:desafio-banco",
 				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}

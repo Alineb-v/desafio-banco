@@ -14,11 +14,14 @@ import br.com.algartelecom.repository.TransacaoRepository;
 @Service
 public class TransacaoService {
 
-	@Autowired
 	private ContaRepository contaRepository;
+	private TransacaoRepository transacaoRepository;
 
 	@Autowired
-	private TransacaoRepository transacaoRepository;
+	public TransacaoService(ContaRepository contaRepository, TransacaoRepository transacaoRepository) {
+		this.contaRepository = contaRepository;
+		this.transacaoRepository = transacaoRepository;
+	}
 
 	// valorTransacao Double
 	public Conta depositar(Transacao transacaoDeposito, String numConta) throws Exception {
@@ -29,7 +32,6 @@ public class TransacaoService {
 		Double novoValor = somar(transacaoDeposito.getValorTransacao(), conta.getSaldo());
 		if (conta.getStatus() == StatusConta.ATIVO) {
 			conta.setSaldo(novoValor);
-			// Pq salvar transacao no Repository ?
 			transacaoDeposito.setNumConta(numConta);
 			transacaoRepository.save(transacaoDeposito);
 			contaRepository.save(conta);
@@ -58,14 +60,15 @@ public class TransacaoService {
 
 	}
 
-	public Conta transferir(Transacao transacaoTransferencia, String numConta) {
+	public Conta transferir(Transacao transacaoTransferencia, String numConta) throws Exception {
 		Conta contaOrigem = contaRepository.findByNumConta(numConta);
 		Conta contaDestino = contaRepository.findByNumConta(transacaoTransferencia.getNumContaDestino());
 
 		if (contaOrigem == contaDestino || contaOrigem.getStatus() == StatusConta.INATIVO
 				|| contaDestino.getStatus() == StatusConta.INATIVO
 				|| contaOrigem.getSaldo() < transacaoTransferencia.getValorTransacao()) {
-			return null;
+			
+			throw new Exception();
 		}
 
 		Double valorAtual = subtrair(contaOrigem.getSaldo(), transacaoTransferencia.getValorTransacao());
@@ -103,8 +106,8 @@ public class TransacaoService {
 		return valorTransacao - saldo;
 
 	}
-	
-	public List<Transacao> pegaTodas(){
+
+	public List<Transacao> pegaTodas() {
 		return transacaoRepository.findAll();
 	}
 }

@@ -1,0 +1,13 @@
+package br.com.algartelecom.service;
+
+import org.junit.jupiter.api.Test;
+
+class TransacaoServiceTest {
+	
+	private TransacaoService service;
+
+	@Test
+	void deveriaDepositar() {
+	}
+
+}

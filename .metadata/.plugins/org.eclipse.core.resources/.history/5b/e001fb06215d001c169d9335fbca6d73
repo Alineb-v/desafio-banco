@@ -1,0 +1,25 @@
+package br.com.algartelecom;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+import br.com.algartelecom.controller.TransacaoController;
+import br.com.algartelecom.service.TransacaoService;
+
+@WebMvcTest(TransacaoController.class)
+class BancoApplicationTests {
+
+	@Autowired
+	MockMvc mockkMvc;
+	
+	@MockBean
+	private TransacaoService service;
+	
+	@Test
+	void contextLoads() {
+	}
+
+}
